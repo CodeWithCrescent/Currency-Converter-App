@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<String> currencies = [];
   bool isLoading = true;
   DateTime lastUpdatedAt = DateTime.now();
-  DateTime nextUpdateAt = DateTime.now().add(const Duration(hours: 24));
+  DateTime nextUpdateAt = DateTime.now().add(const Duration(hours: 2));
 
   @override
   void initState() {
