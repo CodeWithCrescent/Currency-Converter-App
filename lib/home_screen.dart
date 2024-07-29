@@ -44,8 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
 
     try {
-      final response = await http.get(Uri.parse(
-          'https://v6.exchangerate-api.com/v6/b76c3563d9309941bfe85ce6/latest/USD'));
+      final response = await http.get(
+        Uri.parse(
+            'https://v6.exchangerate-api.com/v6/b76c3563d9309941bfe85ce6/latest/USD'),
+      );
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
@@ -62,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
       } else {
         _showNoInternetDialog();
       }
-    } catch (error) {
+    } catch (e) {
       _showNoInternetDialog();
     } finally {
       setState(() {
